@@ -26,7 +26,23 @@ public class UtilitiesTest {
     }
 
     @Test
-    public void greatestCommonFactorOfTwoEqualNumbersEqualsTheNumberItself() throws Exception {
+    public void extraTest1() throws Exception {
+        assertEquals(28, Utilities.greatestCommonFactor(28, 28));
+    }
+
+
+    @Test
+    public void extraTest2() throws Exception {
+        assertEquals(28, Utilities.greatestCommonFactor(28, 28));
+    }
+
+    @Test
+    public void extraTest3() throws Exception {
+        assertEquals(28, Utilities.greatestCommonFactor(28, 28));
+    }
+
+    @Test
+    public void extraTest4() throws Exception {
         assertEquals(28, Utilities.greatestCommonFactor(28, 28));
     }
 }
