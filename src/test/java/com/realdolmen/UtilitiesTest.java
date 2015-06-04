@@ -41,8 +41,5 @@ public class UtilitiesTest {
         assertEquals(28, Utilities.greatestCommonFactor(28, 28));
     }
 
-    @Test
-    public void extraTest4() throws Exception {
-        assertEquals(28, Utilities.greatestCommonFactor(28, 28));
-    }
+
 }
