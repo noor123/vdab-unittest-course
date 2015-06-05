@@ -71,5 +71,38 @@ public class FractionTest {
         assertEquals(1, fraction001.getDenominator());
     }
 
+    @Test
+    public void testingStringToString() throws Exception {
+        Fraction fraction001 = new Fraction(1542,342);
+        assertEquals("1542 / 342", fraction001.toString());
+    }
+
+    @Test
+    public void testingMethodEquals001() throws Exception {
+        Fraction fraction001 = new Fraction(3,17);
+        Fraction fraction002 = new Fraction(21,119);
+        assertEquals(true, fraction001.equals(fraction002));
+        assertEquals(3, fraction001.getNumerator());
+        assertEquals(17, fraction001.getDenominator());
+        assertEquals(21, fraction002.getNumerator());
+        assertEquals(119, fraction002.getDenominator());
+    }
+
+    @Test
+    public void testingMethodEquals002() throws Exception {
+        Fraction fraction001 = new Fraction(4,7);
+        Fraction fraction002 = new Fraction(16,17);
+        assertEquals(4, fraction001.getNumerator());
+        assertEquals(7, fraction001.getDenominator());
+        assertEquals(16, fraction002.getNumerator());
+        assertEquals(17, fraction002.getDenominator());
+    }
+
+    @Test
+    public void testingMethodasDouble() throws Exception {
+        Fraction fraction001 = new Fraction(4,7);
+        assertEquals(0.57, (fraction001.asDouble()));
+    }
+
 
 }
