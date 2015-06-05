@@ -1,5 +1,6 @@
 package com.realdolmen;
 
+import Exercises.Fraction;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -26,20 +27,8 @@ public class UtilitiesTest {
     }
 
     @Test
-    public void extraTest1() throws Exception {
+    public void greatestCommonFactorReturnsNumberWhenEqual() throws Exception {
         assertEquals(28, Utilities.greatestCommonFactor(28, 28));
     }
-
-
-    @Test
-    public void extraTest2() throws Exception {
-        assertEquals(28, Utilities.greatestCommonFactor(28, 28));
-    }
-
-    @Test
-    public void extraTest3() throws Exception {
-        assertEquals(28, Utilities.greatestCommonFactor(28, 28));
-    }
-
 
 }
