@@ -101,7 +101,7 @@ public class FractionTest {
     @Test
     public void testingMethodasDouble() throws Exception {
         Fraction fraction001 = new Fraction(4,7);
-        assertEquals(0.57, (fraction001.asDouble()));
+        assertEquals(0.571, (fraction001.asDouble()), 0.001);
     }
 
 
