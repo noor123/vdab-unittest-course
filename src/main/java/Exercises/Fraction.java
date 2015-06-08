@@ -35,15 +35,20 @@ public class Fraction {
         int b = this.getDenominator();
         int c = otherFraction.getNumerator();
         int d = otherFraction.getDenominator();
-        Fraction x = new Fraction(a,b);
-        Fraction y = new Fraction(c,d);
-        x.simplify();
-        y.simplify();
-        if ((x.getNumerator() == y.getNumerator()) && (x.getDenominator() == y.getDenominator())) {
+        if ((a == 0 && c ==0) || (b == 0 && d == 0)) {
             return true;
         } else {
-            return false;
+            Fraction x = new Fraction(a,b);
+            Fraction y = new Fraction(c,d);
+            x.simplify();
+            y.simplify();
+            if ((x.getNumerator() == y.getNumerator()) && (x.getDenominator() == y.getDenominator())) {
+                return true;
+            } else {
+                return false;
+            }
         }
+
     }
 
     public double asDouble() {

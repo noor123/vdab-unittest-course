@@ -36,10 +36,12 @@ public class JdbcPersonRepository implements PersonRepository {
                 PreparedStatement statement = connection.prepareStatement("select * from people p where p.id = ?");
                 statement.setInt(1, id);
                 ResultSet resultSet = statement.executeQuery();
-                resultSet.next();
-                // What happens if there is no person with this id?
-                // Did you test that scenario?
-                return new PersonMapper().implode(resultSet);
+                if (resultSet.next()) {
+                    return new PersonMapper().implode(resultSet);
+                } else {
+                    return null;
+                }
+
             }
         });
     }
@@ -92,17 +94,15 @@ public class JdbcPersonRepository implements PersonRepository {
         private Person implode(ResultSet rs) throws SQLException {
             Person person = new Person(
                     rs.getString("firstName"),
-                    null, // Bug! Oops! rs.getString("lastName"),
+                    rs.getString("lastName"),
                     rs.getDate("birthDate"),
                     new Address(
                             rs.getString("street"),
                             rs.getString("number"),
-                            null
-//                            Bug! Silly me!
-//                            new City(
-//                                    rs.getString("city"),
-//                                    rs.getString("postalCode")
-//                            )
+                            new City(
+                                rs.getString("city"),
+                                rs.getString("postalCode")
+                            )
                     )
             );
             person.setId(rs.getInt("id"));
@@ -128,7 +128,7 @@ public class JdbcPersonRepository implements PersonRepository {
      * @throws SQLException When a connection could not be made.
      */
     private static Connection createConnection() throws SQLException {
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "");
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/Test2", "root", "");
     }
 
     private static <T> T execute(StatementExecutor<T> statementExecutor) {
