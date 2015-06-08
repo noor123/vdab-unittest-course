@@ -36,11 +36,11 @@ public class CalculatorTest {
         assertEquals(119, c.add("15,2\n34\n56,12"));
     }
 
-    @Test
-    public void testWithOwnDelimeter() {
-        Calculator c = new Calculator();
-        //assertEquals(306, c.add(//;;"15,234,56,1"));
-    }
+//    @Test
+//    public void testWithOwnDelimeter() {
+//        Calculator c = new Calculator();
+//        assertEquals(306, c.add("//;;\n15;;234;;56;;1"));
+//    }
 
 
 }
